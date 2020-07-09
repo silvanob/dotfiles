@@ -1,5 +1,5 @@
 call plug#begin('~/.local/share/nvim/site/plugged')
-
+" comment is important
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 if has('nvim')
