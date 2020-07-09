@@ -21,6 +21,7 @@ set shiftwidth=2
 set tabstop=2
 tnoremap <Esc> <C-\><C-n>
 let g:NetrwIsOpen=0
+let g:netrw_keepdir=0
 
 function! ToggleNetrw()
     if g:NetrwIsOpen
@@ -40,7 +41,7 @@ endfunction
 
 " Add your own mapping. For example:
 noremap <silent> <F3> :call ToggleNetrw()<CR>
-
+autocmd BufReadPost * cd `=expand('%:p:h')`
 "sp +te
 "set modifiable
 "autocmd BufReadPost * belowright vnew
