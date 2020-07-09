@@ -25,7 +25,7 @@ call plug#end()
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " Remapping
-nmap <F8> :TagbarToggle<CR>
+nmap <silent> <F8> :TagbarToggle<CR>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 tnoremap <Esc> <C-\><C-n>
 noremap <silent> <F3> :call ToggleNetrw()<CR>
@@ -37,7 +37,6 @@ autocmd BufReadPost * cd `=expand('%:p:h')`
 set autoindent
 set shiftwidth=2
 set tabstop=2
-set shell=zsh\ -i
 
 " g: variables
 let g:NetrwIsOpen=0
