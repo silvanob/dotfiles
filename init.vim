@@ -37,6 +37,7 @@ autocmd BufReadPost * cd `=expand('%:p:h')`
 set autoindent
 set shiftwidth=2
 set tabstop=2
+set termguicolors
 
 " g: variables
 let g:NetrwIsOpen=0
