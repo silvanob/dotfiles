@@ -42,6 +42,7 @@ endfunction
 " Add your own mapping. For example:
 noremap <silent> <F3> :call ToggleNetrw()<CR>
 autocmd BufReadPost * cd `=expand('%:p:h')`
+set shell=zsh\ -i
 "sp +te
 "set modifiable
 "autocmd BufReadPost * belowright vnew
