@@ -110,12 +110,5 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias vim="nvim"
-alias vi="nvim"
-alias vinit=viminit
-alias viminit="nvim ~/.config/nvim/init.vim"
-alias git="LD_PRELOAD=/usr/local/bin/gitbslr.so git"
-alias udot="cd ~/dotfiles && git add . && git commit -m 'update files' && git push origin master && cd -"
-export GPG_TTY=$(tty)
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

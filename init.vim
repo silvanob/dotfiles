@@ -1,7 +1,7 @@
 call plug#begin('~/.local/share/nvim/site/plugged')
 " comment is important
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+Plug 'tpope/vim-fugitive'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
