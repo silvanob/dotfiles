@@ -5,6 +5,7 @@ call plug#begin('~/.local/share/nvim/site/plugged')
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
+Plug 'mtdl9/vim-log-highlighting'
 
 " Other plugins that only load on certain conditions
 if has('nvim')
