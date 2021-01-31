@@ -2,11 +2,24 @@
 call plug#begin('~/.local/share/nvim/site/plugged')
 
 " Here go plugins that don't need special conditionals
+Plug 'udalov/kotlin-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'mtdl9/vim-log-highlighting'
-
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'roxma/vim-tmux-clipboard'
+Plug 'RyanMillerC/better-vim-tmux-resizer'
+Plug 'hashivim/vim-vagrant'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-obsession'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Other plugins that only load on certain conditions
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -26,6 +39,10 @@ call plug#end()
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " Remapping
+map <ScrollWheelUp> <C-Y>
+map <S-ScrollWheelUp> <C-U>
+map <ScrollWheelDown> <C-E>
+map <S-ScrollWheelDown> <C-D>
 nmap <silent> <F8> :TagbarToggle<CR>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 tnoremap <Esc> <C-\><C-n>
@@ -36,15 +53,21 @@ autocmd BufReadPost * cd `=expand('%:p:h')`
 
 " VIM variables
 set autoindent
+set tabstop=8
 set shiftwidth=2
-set tabstop=2
+set softtabstop=2
+set expandtab
 set termguicolors
 set clipboard=unnamedplus
+set splitbelow
+set splitright
+set mouse=nv
+set number " Show current line number
+set relativenumber " Show relative line numbers
 
 " g: variables
 let g:NetrwIsOpen=0
 let g:netrw_keepdir=0
-
 
 "----------Functions----------"
 
@@ -64,3 +87,8 @@ function! ToggleNetrw()
         silent 20Lexplore
     endif
 endfunction
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif

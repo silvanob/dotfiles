@@ -75,7 +75,7 @@ HIST_STAMPS="dd-mm-yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git kubectl helm fzf minikube thefuck)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,6 +85,9 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -105,6 +108,9 @@ export LANG=en_US.UTF-8
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
+# keybindings for home and end
+bindkey  "^[[1~"   beginning-of-line
+bindkey  "^[[4~"   end-of-line
 # Copied from .bashrc
 
 alias ll='ls -alF'
@@ -112,7 +118,9 @@ alias la='ls -A'
 alias l='ls -CF'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+export GOPATH="$HOME/go"
 export NVM_DIR="$HOME/.nvm"
+export FZF_BASE=/path/to/fzf/install/dir
+eval $(thefuck --alias)
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
