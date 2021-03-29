@@ -22,6 +22,7 @@ Plug 'tpope/vim-obsession'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'lervag/vimtex'
 " Other plugins that only load on certain conditions
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
