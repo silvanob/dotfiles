@@ -23,6 +23,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'lervag/vimtex'
+Plug 'mbbill/undotree'
 " Other plugins that only load on certain conditions
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -50,6 +51,7 @@ nmap <silent> <F8> :TagbarToggle<CR>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 tnoremap <Esc> <C-\><C-n>
 noremap <silent> <F3> :call ToggleNetrw()<CR>
+nnoremap <F5> :UndotreeToggle<CR>
 
 " Autocmd 
 autocmd BufReadPost * cd `=expand('%:p:h')`
@@ -95,3 +97,19 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+if has('win32') || (has('unix') && exists('$WSLENV'))
+  let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
+  let g:vimtex_view_general_options_latexmk = '-reuse-instance'
+endif
+let g:vimtex_view_general_options
+    \ = '-reuse-instance -forward-search @tex @line @pdf'
+let g:vimtex_compiler_latexmk = { 
+        \ 'executable' : 'latexmk',
+        \ 'options' : [ 
+        \   '-xelatex',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
