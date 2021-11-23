@@ -192,8 +192,8 @@ for_window [class=".*"] border pixel 0
 smart_gaps on
 
 # Set the gap size
-#gaps outer 10
-#gaps inner 10
+#gaps outer 20
+#gaps inner 20
 
 # Only enable outer gaps when there is exactly one container
 smart_gaps inverse_outer
@@ -207,9 +207,11 @@ smart_gaps inverse_outer
 
 ## Manual management of external displays
 # Set the shortcuts and what they do
-set $mode_display Ext Screen (v) VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDMI OFF
+set $mode_display Ext Screen (v) VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDMI OFF (shift+h) vertical HDMI left and laptop right
 mode "$mode_display" {
     bindsym v exec --no-startup-id xrandr --output eDP1 --auto --right-of HDMI1, mode "default"; restart
+
+    bindsym Shift+h exec --no-startup-id xrandr --output eDP1 --primary --mode 1920x1080 --pos 1440x1925 --rotate normal --output HDMI1 --mode 2560x1440 --pos 0x0 --rotate left --output VIRTUAL1 --off, mode  "default"; restart
     bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --right-of eDP1, mode "default"; restart
     bindsym x exec --no-startup-id xrandr --output eDP1 --auto --off , mode "default"; restart
     bindsym y exec --no-startup-id xrandr --output HDMI1 --auto --off , mode "default"; restart

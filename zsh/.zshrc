@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/go/bin:$HOME/.local/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/go/bin:$HOME/.local/bin:/home/silvano/.gem/ruby/3.0.0/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/silvano/.oh-my-zsh"
@@ -75,7 +75,7 @@ HIST_STAMPS="dd-mm-yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl helm fzf minikube thefuck vagrant tmux)
+plugins=(git kubectl helm fzf minikube thefuck vagrant aws vault nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,7 +120,7 @@ alias l='ls -CF'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export GOPATH="$HOME/go"
 export NVM_DIR="$HOME/.nvm"
-export FZF_BASE=/path/to/fzf/install/dir
+export FZF_BASE=/usr/bin/fzf
 eval $(thefuck --alias)
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
