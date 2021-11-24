@@ -49,7 +49,7 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec konsole --profile a
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -225,6 +225,7 @@ bindsym $mod+x mode "$mode_display"
 
 focus_follows_mouse no
 exec_always --no-startup-id picom
+exec_always --no-startup-id dunst
 
 # take a screenshot of a screen region and copy it to a clipboard
 bindsym --release Shift+Print exec --no-startup-id "scregcp -s $HOME/Pictures/screenshots/"
