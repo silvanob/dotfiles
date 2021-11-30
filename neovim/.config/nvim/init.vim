@@ -1,6 +1,6 @@
 " VIM-Plug, adding plugins and stuff.
 call plug#begin('~/.local/share/nvim/site/plugged')
-
+" important comment
 " Here go plugins that don't need special conditionals
 Plug 'udalov/kotlin-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
