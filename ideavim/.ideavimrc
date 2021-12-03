@@ -30,13 +30,16 @@ nnoremap gb :action JumpToLastChange<CR>
 nnoremap U :action FindUsages<CR>
 nnoremap R :action RenameElement<CR>
 
-nnoremap == :action ReformatCode<CR>
-vnoremap == :action ReformatCode<CR>
+nnoremap == :action Javascript.Linters.EsLint.Fix<CR>
+vnoremap == :action Javascript.Linters.EsLint.Fix<CR>
 
 nnoremap cc :action CommentByLineComment<CR>
 vnoremap cc :action CommentByLineComment<CR>
 
 nnoremap <C-CR> :action ShowIntentionActions<CR>
+
+nnoremap [s :action GotoNextError<CR>
+nnoremap ]s :action GotoPreviousError<CR>
 
 nnoremap ,a :action GotoAction<CR>
 vnoremap ,a :action GotoAction<CR>
