@@ -7,7 +7,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'mtdl9/vim-log-highlighting'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -92,11 +91,32 @@ function! ToggleNetrw()
         silent 20Lexplore
     endif
 endfunction
-if exists('+termguicolors')
+if has('nvim')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+colorscheme cwcolors
+syntax enable
+
+" Recommended, but optionally add:
+
+" Set tag file if REPOBASE is set. This assumes you set the environment
+" variable REPOBASE to reflect the base directory of your current project
+" and generated your ctags file as $REPOBASE-objdir/tags.
+if $REPOBASE != ""
+  set tags=$REPOBASE-objdir/tags
+endif
+
+" Bind <F10> to a function that shows the syntax highlighting group under thecursor.
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
+\       '> trans<' . synIDattr(synID(line("."),col("."),0),"name") .
+\       "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" Highlight trailing spaces.
+let c_space_errors=1
+" Don't highlight the Next match while typing a regular expression search.
+set noincsearch
 
 if has('win32') || (has('unix') && exists('$WSLENV'))
   let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
