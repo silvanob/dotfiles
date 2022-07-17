@@ -192,8 +192,8 @@ for_window [class=".*"] border pixel 0
 smart_gaps on
 
 # Set the gap size
-gaps outer 20
-gaps inner 20
+gaps outer 0
+gaps inner 10
 
 # Only enable outer gaps when there is exactly one container
 smart_gaps inverse_outer
@@ -236,7 +236,7 @@ bindsym --release Shift+Print exec --no-startup-id "scregcp -s $HOME/Pictures/sc
 bindsym --release Print exec --no-startup-id "scregcp $HOME/Pictures/screenshots/"
 
 # Set background
-exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/Behind+the+day_003.jpg"
+exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/firewatch.jpg"
 
 # Startup programs
 exec --no-startup-id slack
@@ -244,3 +244,7 @@ exec --no-startup-id ckb-next
 
 assign [class="Slack"] → 1
 exec_always --no-startup-id setxkbmap -option compose:ralt
+exec --no-startup-id xset -b
+exec --no-startup-id tmux
+
+bindsym $mod+u exec --no-startup-id rofi -lines 10 -dmenu -input ~/.symbols.txt | cut -d' ' -f1 -z | xclip -selection c

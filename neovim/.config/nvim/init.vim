@@ -21,7 +21,6 @@ Plug 'tpope/vim-obsession'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'lervag/vimtex'
 Plug 'mbbill/undotree'
 " Other plugins that only load on certain conditions
 if has('nvim')
@@ -36,7 +35,6 @@ endif
 let g:deoplete#enable_at_startup = 1
 
 call plug#end()
-
 " Plugin config stuff that can't be put inside the plug#start and plug#end
 " section
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
