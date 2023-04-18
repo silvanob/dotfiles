@@ -22,6 +22,8 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'mbbill/undotree'
+"Plug 'github/copilot.vim'
+
 " Other plugins that only load on certain conditions
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -49,9 +51,6 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 tnoremap <Esc> <C-\><C-n>
 noremap <silent> <F3> :call ToggleNetrw()<CR>
 nnoremap <F5> :UndotreeToggle<CR>
-
-" Autocmd 
-autocmd BufReadPost * cd `=expand('%:p:h')`
 
 " VIM variables
 set autoindent

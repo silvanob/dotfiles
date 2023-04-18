@@ -21,6 +21,7 @@ set smartcase
 nnoremap ,e :action SearchEverywhere<CR>
 nnoremap ,g :action FindInPath<CR>
 nnoremap ,s :action FileStructurePopup<CR>
+nnoremap
 
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gs :action GotoSuperMethod<CR>
@@ -43,11 +44,13 @@ nnoremap ]s :action GotoPreviousError<CR>
 
 nnoremap ,a :action GotoAction<CR>
 vnoremap ,a :action GotoAction<CR>
+
+nnoremap <F3> :NERDTreeToggle<CR>
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
+map \r <Action>(ReformatCode)
 
-"" Map <leader>d to start debug
+"" Map <leader>d to start debue
 "map <leader>d <Action>(Debug)
 
 "" Map \b to toggle the breakpoint on the current line
@@ -55,3 +58,5 @@ vnoremap ,a :action GotoAction<CR>
 
 
 " Find more examples here: https://jb.gg/share-ideavimrc
+set clipboard+=ideaput
+Plug 'preservim/nerdtree'

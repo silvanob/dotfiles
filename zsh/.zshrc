@@ -10,7 +10,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/go/bin:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/go/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/go/bin:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/go/bin:/opt/cuda/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/silvano/.oh-my-zsh"
@@ -79,7 +79,7 @@ HIST_STAMPS="dd-mm-yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl helm fzf minikube vagrant aws vault nvm ripgrep thefuck)
+plugins=(git kubectl helm fzf minikube vagrant aws vault nvm ripgrep thefuck 1password docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -131,4 +131,12 @@ eval $(thefuck --alias)
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
+export OPENCV_LOG_LEVEL=0
+export OPENCV_VIDEOIO_PRIORITY_INTEL_MFX=0
 source /usr/share/nvm/init-nvm.sh
+export OP_BIOMETRIC_UNLOCK_ENABLED=true
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
