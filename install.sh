@@ -6,7 +6,7 @@ DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "==> Installing brew packages..."
 
 # Terminal essentials
-brew install neovim tmux starship fzf ripgrep fd fastfetch
+brew install neovim tmux starship fzf ripgrep fd fastfetch tree-sitter-cli
 
 # Languages
 brew install python go node nvm pyenv openjdk
@@ -25,6 +25,10 @@ brew install zsh-autosuggestions
 brew install --cask karabiner-elements
 
 echo "==> Running post-install setup..."
+
+# Neovim python provider (pynvim) in its own venv
+[ -d ~/.venvs/nvim ] || python3 -m venv ~/.venvs/nvim
+~/.venvs/nvim/bin/pip install -q pynvim
 
 # Java: link into system JVM directory so /usr/libexec/java_home picks it up
 sudo ln -sfn "$(brew --prefix)/opt/openjdk/libexec/openjdk.jdk" /Library/Java/JavaVirtualMachines/openjdk.jdk
