@@ -23,9 +23,6 @@ brew install zsh-autosuggestions
 
 echo "==> Running post-install setup..."
 
-# fzf shell integration
-"$(brew --prefix)/opt/fzf/install" --all --no-bash --no-fish
-
 # Java: link into system JVM directory so /usr/libexec/java_home picks it up
 sudo ln -sfn "$(brew --prefix)/opt/openjdk/libexec/openjdk.jdk" /Library/Java/JavaVirtualMachines/openjdk.jdk
 

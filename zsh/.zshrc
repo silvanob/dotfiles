@@ -42,10 +42,6 @@ command -v pyenv &>/dev/null && eval "$(pyenv init -)"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-# --- keybindings ---
-bindkey "^[[1~" beginning-of-line
-bindkey "^[[4~" end-of-line
-
 # --- aliases ---
 alias v='nvim'
 alias vi='nvim'
@@ -56,7 +52,5 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ks='tmux kill-server'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 command -v fastfetch &>/dev/null && fastfetch
