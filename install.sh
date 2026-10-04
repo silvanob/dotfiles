@@ -21,6 +21,9 @@ brew install xh jq
 # Shell plugins
 brew install zsh-autosuggestions
 
+# Keyboard remapping
+brew install --cask karabiner-elements
+
 echo "==> Running post-install setup..."
 
 # Java: link into system JVM directory so /usr/libexec/java_home picks it up
@@ -40,6 +43,10 @@ ln -sfn "$DOTFILES/starship/.config/starship.toml" ~/.config/starship.toml
 # whole config directories
 ln -sfn "$DOTFILES/nvim/.config/nvim" ~/.config/nvim
 ln -sfn "$DOTFILES/fastfetch/.config/fastfetch" ~/.config/fastfetch
+
+# karabiner: only the json, since the directory also holds automatic backups
+mkdir -p ~/.config/karabiner
+ln -sfn "$DOTFILES/karabiner/.config/karabiner/karabiner.json" ~/.config/karabiner/karabiner.json
 
 echo ""
 echo "Done! Next steps:"

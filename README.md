@@ -23,6 +23,7 @@ cd ~/dotfiles && chmod +x install.sh && ./install.sh
 - **tmux** — prefix `Ctrl+A`, vi keys, tpm plugins (resurrect, continuum, vim-tmux-navigator)
 - **Neovim** — Lua config with lazy.nvim: LSP (mason), blink.cmp, telescope, harpoon, treesitter, conform, gruvbox
 - **fastfetch** — system info on shell start
+- **Karabiner-Elements** — caps lock/escape swap, Finder forward-delete to Trash
 - **IdeaVim** — JetBrains vim bindings
 
 ## Symlinks
@@ -35,3 +36,4 @@ cd ~/dotfiles && chmod +x install.sh && ./install.sh
 | `starship/.config/starship.toml` | `~/.config/starship.toml` |
 | `nvim/.config/nvim` | `~/.config/nvim` |
 | `fastfetch/.config/fastfetch` | `~/.config/fastfetch` |
+| `karabiner/.config/karabiner/karabiner.json` | `~/.config/karabiner/karabiner.json` |
